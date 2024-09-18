@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delete Items</title>
+  </head>
+  <body>
+    <h1>Delete items by delete button</h1>
+
+    <h2 id="deleting-item">Worst item of this section. Please delete me.</h2>
+    <input type="text" name="" id="text-area" placeholder="Type delete" />
+    <button id="delete-btn" disabled>Delete</button>
+
+    <script>
+      document
+        .getElementById("text-area")
+        .addEventListener("keyup", function (event) {
+          const text = event.target.value;
+          const deleteBtn = document.getElementById("delete-btn");
+          if (text === "delete") {
+            deleteBtn.removeAttribute("disabled");
+          } else {
+            deleteBtn.setAttribute("disabled", true);
+          }
+        });
+
+      document
+        .getElementById("delete-btn")
+        .addEventListener("click", function () {
+          const deleting = document.getElementById("deleting-item");
+          deleting.style.display = "none";
+        });
+    </script>
+  </body>
+</html>

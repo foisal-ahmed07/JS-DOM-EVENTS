@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Final DOM Event Handlers</h1>
+    <h3 id="handler-status">Default Text</h3>
+    <button onclick="handleClick()">
+      Handle Event By Add onclick Function
+    </button>
+    <button id="event">Handle by addEvent</button>
+
+    <script>
+      function handleClick() {
+        const handlerStatus = document.getElementById("handler-status");
+        handlerStatus.innerText =
+          "Handler by function attached on onclick attribute";
+      }
+
+      document.getElementById("event").addEventListener("click", function () {
+        const eventStatus = document.getElementById("handler-status");
+        eventStatus.innerText = "text updated by addEvent    ";
+      });
+    </script>
+  </body>
+</html>

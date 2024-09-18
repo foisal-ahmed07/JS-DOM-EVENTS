@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Onclick Handler</title>
+  </head>
+  <body>
+    <h1>Button diye background color change</h1>
+
+    <button onclick="document.body.style.backgroundColor ='green'">
+      Make Green
+    </button>
+    <button onclick="makeBlue()">Make Blue</button>
+    <button id="make-red">Make Red</button>
+    <button id="make-yellow">Make Yellow</button>
+    <button id="make-steelblue">Make SteelBlue</button>
+
+    <script>
+
+      document
+        .getElementById("make-red")
+        .addEventListener("click", function () {
+          document.body.style.backgroundColor = "red";
+        });
+
+      function makeBlue() {
+        document.body.style.backgroundColor = "blue";
+      }
+
+      document.getElementById("make-yellow").addEventListener("click", makeYellow)
+      function makeYellow(){
+        document.body.style.backgroundColor = "yellow"
+      }
+      const steelblue = document.getElementById("make-steelblue");
+        steelblue.onclick = function(){
+            document.body.style.backgroundColor = "steelblue"
+        }
+    </script>
+  </body>
+</html>

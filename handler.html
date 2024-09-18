@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events handler with dom</title>
+  </head>
+  <body>
+
+    <h1>Text change event handler</h1>
+
+    <h3 id="changed-text">Default text</h3>
+    <button onclick="handlerBtn()">Handle Event by add onclick Function</button>
+
+    <button id="event">Handler by the event</button>
+
+    <script>
+      function handlerBtn() {
+        const text = document.getElementById("changed-text");
+        text.innerText = "h3 text changed by the button handler";
+      }
+
+      // same same but different
+      document.getElementById("event").addEventListener("click", function () {
+        const status = document.getElementById("changed-text");
+        status.innerText = "text updated by the event handler btn";
+      });
+    </script>
+  </body>
+</html>
